@@ -668,7 +668,7 @@ img {
   opacity: 0;
 }
 
-.projects .item a:hover .card-overlay {
+.card-thumb:hover .card-overlay {
   opacity: 1;
   /* transform: translateY(0); */
   /* transition: transform 250ms ease; */
