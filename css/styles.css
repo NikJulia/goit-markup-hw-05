@@ -19,6 +19,7 @@ body {
 }
 
 header {
+  height: 80px;
   font-weight: 500;
   font-size: 14px;
   line-height: 16px;
@@ -119,6 +120,8 @@ img {
   padding-top: 32px;
   padding-bottom: 32px;
   color: var(--primary-btn-color);
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .site-nav .link:hover,
@@ -159,6 +162,8 @@ img {
   padding-top: 32px;
   padding-bottom: 32px;
   color: var(--primary-text-color);
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-contacts .icon-mail,
@@ -411,6 +416,9 @@ img {
   height: 44px;
   border-radius: 50%;
   color: var(--icon-primary-color);
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .links-list .list-item + .list-item {
@@ -467,7 +475,9 @@ img {
   height: 44px;
   border-radius: 50%;
   color: var(--secondary-text-color);
-  background: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .links-list .footer-item:not(:last-child) {
@@ -504,6 +514,9 @@ img {
   border: 1px solid var(--icon-primary-color);
   border-radius: 4px;
   color: var(--icon-primary-color);
+
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-list .client:hover,
@@ -541,6 +554,9 @@ img {
   color: var(--secondary-text-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   background-color: var(--secondary-btn-color);
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button.primary-btn:hover,
@@ -554,6 +570,10 @@ img {
   padding: 6px 22px;
   color: var(--primary-btn-color);
   background-color: var(--secondary-bg-color);
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button.secondary-btn:hover,
@@ -630,6 +650,8 @@ img {
 
 .projects .item a {
   display: block;
+
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .projects .item a:hover,
@@ -638,17 +660,20 @@ img {
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
-.card-thumb:hover::before {
+.card-thumb:hover::after {
   opacity: 1;
+  transform: translateY(-100%);
 }
 
 .card-thumb {
   position: relative;
   width: 100%;
   height: 100%;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
 }
 
-.card-thumb::before {
+.card-thumb::after {
   display: inline-block;
   content: '';
   position: absolute;
@@ -656,22 +681,24 @@ img {
   height: 100%;
   background-color: rgba(33, 150, 243, 0.9);
   opacity: 0;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card-overlay {
   position: absolute;
-  top: 0;
+  top: 100%;
   left: 0;
   width: 100%;
   height: 100%;
-  /* transform: translateY(100%); */
   opacity: 0;
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card-thumb:hover .card-overlay {
   opacity: 1;
-  /* transform: translateY(0); */
-  /* transition: transform 250ms ease; */
+  transform: translateY(-100%);
+  z-index: 2;
 }
 
 .card-overlay .text {
@@ -692,6 +719,8 @@ img {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
+
+  transition: 500ms all ease;
 }
 
 .backdrop.is-hidden {
